@@ -30,23 +30,6 @@ set :skip_urgent_warp, false
 # Set the WM_NAME of subtle (Java quirk)
 # set :wmname, "LG3D"
 
-# Addons
-# Get in with "hg clone http://hg.sobforge.org/
-
-begin
-    require "#{ENV["HOME"]}/.local/share/subtle/addons/selector.rb" 
-    Subtle::Contrib::Selector.font = "xft:Ohsnap:pixelsize=80"
-    rescue LoadError => error
-    puts error
-end
-
-begin
-    require "#{ENV["HOME"]}/.local/share/subtle/addons/positioner.rb" 
-    Subtle::Contrib::Positioner.font = "xft:Ohsnap:pixelsize=80" 
-    rescue LoadError => error
-    puts error
-end
-
 # == Screen
 
 screen 1 do
