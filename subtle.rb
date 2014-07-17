@@ -853,17 +853,6 @@ on :client_focus do |c|
     puts c.name
 end
 
-# == Autostart
-
-on :start do
-    Subtlext::Subtle.spawn "sh ~/.fehbg"
-    Subtlext::Subtle.spawn "urxvt"
-    Subtlext::Subtle.spawn "mpd"
-    Subtlext::Subtle.spawn "sleep 2s && subtler -r"
-    Subtlext::Subtle.spawn "numlockx" 
-    Subtlext::Subtle.spawn "compton -CGbc -t -8 -l -9 -r 6 -o 0.7 -m 1.0"
-end
-
 on :client_create do |c|
     c.views.jump
     c.focus
