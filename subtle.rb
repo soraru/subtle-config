@@ -399,16 +399,6 @@ view "moe",     "terms|default"
 view "qer",     "browser"
 view "waai",    "media"
 
-# == Sublets
-sublet :clock do
-  interval      30
-  foreground    color_medium
-  background    bg_a
-  format_string "%y/%m/%d %H:%M"
-end
-
-sublet :mpd do
-~ ❯❯❯ cat .config/subtle/subtle.rb
 # == Options
 # Window move/resize steps in pixel per keypress
 set :increase_step, 10
