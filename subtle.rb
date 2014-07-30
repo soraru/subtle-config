@@ -336,7 +336,6 @@ grab "W-w",       "firefox"
 grab "W-m",       "urxvt -name ncmpcpp  -e ncmpcpp"
 grab "W-i",       "urxvt -name irssi    -e irssi"
 grab "W-b",       "dwb"
-grab "W-g",       "dolphin"  
 
 # Selector
 grab "W-s" do
@@ -361,7 +360,7 @@ end
 # == Tags
 # Simple tags
 tag "terms",   "xterm|urxvt|termite"
-tag "browser", "uzbl|opera|firefox|navigator|dwb|gedit"
+tag "browser", "uzbl|opera|firefox|navigator|dwb"
 tag "media", "mpv|mupdf|Cave Story +"
 
 # Placement
@@ -800,7 +799,7 @@ end
 sublet :mpd do
     format_sting   "%artist% %title%"
     show_icons     false
-    show_colos     true
+    show_colors    true
     show_pause     true
     artist_color   color_medium
     title_color    color_light
