@@ -305,7 +305,7 @@ grab "W-KP_1",      [ :bl_a1, :bl_a2, :bl_a3, :bl_b1, :bl_b2, :bl_b3, :bl_c1, :b
 
 grab "W-KP_0",      [ :sp_br, :sp_bl, :sp_tr, :sp_tl                                         ]
 
-# In cas" no numpad is available e.g. on notebooks
+# In case no numpad is available e.g. on notebooks
 #grab "W-q", [ :top_left,     :top_left66,     :top_left33     ]
 #grab "W-w", [ :top,          :top66,          :top33          ]
 #grab "W-e", [ :top_right,    :top_right66,    :top_right33    ]
