@@ -49,9 +49,9 @@ color_dark =    "#3F5454"
 # == Styles
 style :all do
   icon        color_light
-  padding     2, 2, 2, 2
-  margin      0, 0, 0, 0
-  font        "xft:lemon:pixelsize=8:antialias=false"
+  padding     2, 2, 2, 2 
+  margin      1, 1, 1, 1
+  font        "xft:tewi:pixelsize=9:antialias=false"
 end
 
 # Style for the all views
@@ -59,14 +59,12 @@ style :views do
   foreground  color_medium
   background  bg_a
   separator   "|"
-  font        "xft:lemon:pixelsize=8:antialias=false"
 
   # Style for the active views
   style :focus do
     foreground  color_medium
     background  color_light
     icon        color_medium
-    font        "xft:lemon:pixelsize=8:antialias=false"
   end
 
   # Style for urgent window titles and views
@@ -74,7 +72,6 @@ style :views do
     foreground  color_light
     background  bg_a
     icon        color_light
-    font        "xft:lemon:pixelsize=8:antialias=false"
   end
 
   # Style for occupied views (views with clients)
@@ -82,7 +79,6 @@ style :views do
     foreground  color_light
     background  bg_a
     icon        color_light
-    font        "xft:lemon:pixelsize=8:antialias=false"
   end
 end
 
@@ -91,7 +87,6 @@ style :sublets do
   foreground  color_medium
   background  bg_a
   padding     1, 4, 2, 4 
-  font        "xft:lemon:pixelsize=8:antialias=false"
 end
 
 # Style for separator
@@ -106,7 +101,6 @@ style :title do
   padding     1, 4, 2, 4
   foreground  color_medium
   background  bg_a
-  font        "xft:lemon:pixelsize=8:antialias=false"
 end
 
 # Style for active/inactive windows
@@ -116,7 +110,6 @@ style :clients do
   margin    4, 4, 4, 4
   padding   0, 0, 0, 0
   width     75
-  font        "xft:lemon:pixelsize=8:antialias=false"
 end
 
 # Style for subtle
@@ -125,7 +118,6 @@ style :subtle do
   margin       0, 0, 0, 0
   panel_top    bg_a
   panel_botton bg_a 
-  font         "xft:lemon:pixelsize=8:antialias=false"
 end
 
 # == Gravities
@@ -313,7 +305,7 @@ grab "W-KP_1",      [ :bl_a1, :bl_a2, :bl_a3, :bl_b1, :bl_b2, :bl_b3, :bl_c1, :b
 
 grab "W-KP_0",      [ :sp_br, :sp_bl, :sp_tr, :sp_tl                                         ]
 
-# In case no numpad is available e.g. on notebooks
+# In cas" no numpad is available e.g. on notebooks
 #grab "W-q", [ :top_left,     :top_left66,     :top_left33     ]
 #grab "W-w", [ :top,          :top66,          :top33          ]
 #grab "W-e", [ :top_right,    :top_right66,    :top_right33    ]
@@ -332,11 +324,13 @@ grab "W-KP_0",      [ :sp_br, :sp_bl, :sp_tr, :sp_tl                            
 
 # Exec programs
 grab "W-Return",  "urxvt"
+grab "W-t",       "termite"
 grab "W-w",       "firefox"
 grab "W-m",       "urxvt -name ncmpcpp  -e ncmpcpp"
-grab "W-i",       "urxvt -name irssi    -e irssi"
+grab "W-i",       "urxvt -e irssi"
 grab "W-b",       "dwb"
-grab "W-g",       "dolphin"  
+grab "W-S-l",       "luakit"
+grab "W-S-p",     "scrot"
 
 # Selector
 grab "W-s" do
@@ -361,7 +355,7 @@ end
 # == Tags
 # Simple tags
 tag "terms",   "xterm|urxvt|termite"
-tag "browser", "uzbl|opera|firefox|navigator|dwb|gedit"
+tag "browser", "uzbl|opera|firefox|navigator|dwb|luakit"
 tag "media", "mpv|mupdf|Cave Story +"
 
 # Placement
@@ -388,7 +382,7 @@ tag "stick" do
 end
 
 tag "float" do
-  match "mpv|feh|mupdf|display"
+  match "mpv|feh|mupdf|display|focuswriter"
   float true
 end
 
@@ -428,8 +422,8 @@ end
 
 on :start do
     Subtlext::Client.spawn "urxvt"
-    Subtlext::Client.spawn "termite"
-    Subtlext::Client.spawn "firefox"
+    Subtlext::Client.spawn "sh ~/.fehbg"
+    Subtlext::Client.spawn "compton -b"
 end
 
 on :client_create do |c|
