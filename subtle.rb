@@ -333,26 +333,6 @@ grab "W-S-l",     "luakit"
 grab "W-S-p",     "scrot"
 grab "W-S-d",     "dmenu_run -i -x 420 -y 350 -w 420 -h 25 -l 5 -fn 'tewi-9' -nb '#181512' -nf '#dcc58f' -sb '#a6594a' -sf '#dcc58f'"
 
-# Selector
-grab "W-s" do
-    Subtle::Contrib::Selector.run
-end
-
-# Positioner
-grab "W-C-p" do
-    Subtle::Contrib::Positioner.run
-end
-
-
-# Run Ruby lambdas
-grab "S-F2" do |c|
-  puts c.name
-end
-
-grab "S-F3" do
-  puts Subtlext::VERSION
-end
-
 # == Tags
 # Simple tags
 tag "terms",   "xterm|urxvt|termite"
@@ -411,7 +391,7 @@ sublet :mpd do
     stop_text           "stop"
     pause_text          "pause"
     not_running_text    "closed"
-    blank_text          "stahpu!"
+    blank_text          "blank~"
 end
 
 # == Hooks
