@@ -1,5 +1,7 @@
 # Simple Subtlewm config
 
+![Screenshot](http://i.imgur.com/Qjfu5vm.png)
+
 Dependencies
 ------------
 * [tewi font](https://github.com/lucy/tewi-font);
