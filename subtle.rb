@@ -329,8 +329,9 @@ grab "W-w",       "firefox"
 grab "W-m",       "urxvt -name ncmpcpp  -e ncmpcpp"
 grab "W-i",       "urxvt -e irssi"
 grab "W-b",       "dwb"
-grab "W-S-l",       "luakit"
+grab "W-S-l",     "luakit"
 grab "W-S-p",     "scrot"
+grab "W-S-d",     "dmenu_run -i -x 420 -y 350 -w 420 -h 25 -l 5 -fn 'tewi-9' -nb '#181512' -nf '#dcc58f' -sb '#a6594a' -sf '#dcc58f'"
 
 # Selector
 grab "W-s" do
@@ -356,7 +357,7 @@ end
 # Simple tags
 tag "terms",   "xterm|urxvt|termite"
 tag "browser", "uzbl|opera|firefox|navigator|dwb|luakit"
-tag "media", "mpv|mupdf|Cave Story +"
+tag "media", "mcomix|mpv|mupdf|Cave Story +"
 
 # Placement
 
@@ -382,7 +383,7 @@ tag "stick" do
 end
 
 tag "float" do
-  match "mpv|feh|mupdf|display|focuswriter"
+  match "mpv|feh|mupdf|display|focuswriter|mcomix"
   float true
 end
 
